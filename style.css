@@ -1,2 +1,378 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+
+.attribution { font-size: 11px; 
+    text-align: center; 
+    color: var(--very-dark-gray);
+    position: absolute;
+    bottom: 3px;
+    right: 50%;
+    transform: translateX(50%); 
+}
+.attribution a { 
+    color: var(--dark-gray); 
+}
+
+/* ------reset--------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+:root {
+    --dark-gray: hsl(0, 0%, 63%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+body {
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+main {
+    position: relative;
+}
+
+.filter {
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 5;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: .2s ease;
+}
+
+/* -----hero section------- */
+
+.hero-grid {
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2em;
+    z-index: 10;
+}
+
+nav>img {
+    width: 20%;
+}
+
+#menu-icon {
+    position: absolute;
+    width: 1.725rem;
+    top: 2em;
+    left: 1em;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background: white;
+    padding: 2em 1em;
+    top: 0;
+    left: 0;
+    list-style: none;
+    transform: translateX(-100%);
+    transform-origin: left;
+    transition: transform .3s ease-in-out;
+}
+
+.menu button {
+    width: 20px;
+    margin-right: 1.5em;
+    cursor: pointer;
+}
+
+.active {
+    transform: translateX(0);
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: .725rem;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    height: 3px;
+    width: 25px;
+    background: black;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    border-radius: 3px;
+    transform-origin: center;
+    transition: .2s ease;
+}
+
+.menu a:hover::after,
+.menu a:focus::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* ---------slider------------ */
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider>ul {
+    display: flex;
+    transition: transform .4s ease-in-out;
+    list-style: none;
+}
+
+.slider>ul li {
+    flex: 1 0 100%;
+}
+
+.slider>ul img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-buttons {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    width: max-content;
+    display: flex;
+}
+
+.slider-buttons button {
+    background: black;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-buttons img {
+    width: 50%;
+    height: auto;
+}
+
+.slider-buttons button:hover,
+.slider-buttons button:focus {
+    opacity: .7;
+}
+
+.first {
+    transform: translateX(0);
+}
+
+.second {
+    transform: translateX(-100%);
+}
+
+.third {
+    transform: translateX(-200%);
+}
+
+/* ------hero text-------- */
+
+.hero-text {
+    position: relative;
+    padding: 2.5em 1.5rem 1.7em;
+}
+
+.hero-text h1,
+.about-text h2 {
+    font-size: 1.7125rem;
+    margin: .8em 0;
+    color: var(--very-dark-gray);
+}
+
+.hero-text p,
+.about-text p {
+    color: var(--dark-gray);
+    font-weight: 500;
+    font-size: .9rem;
+    line-height: 1.4;
+}
+
+.hero-btn {
+    color: var(--very-dark-gray);
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    margin: 2em 0;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.hero-btn img {
+    margin-left: 2em;
+    transform-origin: left;
+    transition: .2s ease-in-out;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+    opacity: .5;
+}
+
+.hero-btn:hover>img,
+.hero-btn:focus>img {
+    transform: scaleX(1.5);
+}
+
+/* ------about------ */
+
+.about-text {
+    padding: 2.5em 1.5rem;
+}
+
+.about-text h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .9rem;
+}
+
+@media (min-width: 700px) {
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 55% 45%;
+    }
+
+    .slider {
+        height: 100%;
+        position: relative;
+    }
+
+    .slider ul {
+        height: 100%;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 2.5em;
+        margin-left: 2em;
+        padding: 0;
+    }
+
+    nav>img {
+        width: 70px;
+    }
+
+    .menu {
+        width: 70%;
+        display: unset;
+        position: relative;
+        background: none;
+        transform: unset;
+        display: flex;
+        padding: 0;
+    }
+
+    .menu a {
+        color: white;
+        font-size: .8rem;
+    }
+
+    .menu a::after {
+        background: white;
+    }
+
+    .menu button {
+        display: none;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
+    .hero-text {
+        padding: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-btn {
+        width: 200px;
+    }
+
+    .slider-buttons {
+        bottom: 0;
+        left: 0;
+        width: 27.5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 60px;
+    }
+
+    .slider-buttons button {
+        width: 100%;
+        height: 60px;
+    }
+
+    .slider-buttons img {
+        width: 30%
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 32.5% 35% 32.5%;
+    }
+
+    .about-text {
+        padding: 3.5em 2.5em;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-grid img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media (min-width: 1000px) {
+    nav {
+        width: 70%;
+    }
+
+    .hero-text {
+        padding: 2.5em 4.5rem 1.7em;
+    }
+}
