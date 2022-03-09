@@ -267,7 +267,7 @@ nav>img {
 @media (min-width: 700px) {
     .hero-grid {
         display: grid;
-        grid-template-columns: 55% 45%;
+        grid-template-columns: 57.5% 42.5%;
     }
 
     .slider {
@@ -332,7 +332,7 @@ nav>img {
     .slider-buttons {
         bottom: 0;
         left: 0;
-        width: 27.5%;
+        width: 26.5%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         height: 60px;
@@ -349,7 +349,7 @@ nav>img {
 
     .about-grid {
         display: grid;
-        grid-template-columns: 32.5% 35% 32.5%;
+        grid-template-columns: 31.25% 37.5% 31.25%;
     }
 
     .about-text {
@@ -377,6 +377,6 @@ nav>img {
     }
 
     .hero-text {
-        padding: 2.5em 4.5rem 1.7em;
+        padding: 2.5em 5em 1.7em;
     }
 }
