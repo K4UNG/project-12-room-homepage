@@ -2,7 +2,7 @@
 
 .attribution { font-size: 11px; 
     text-align: center; 
-    color: var(--very-dark-gray);
+    color: var(--dark-gray); 
     position: absolute;
     bottom: 3px;
     right: 50%;
