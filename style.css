@@ -372,6 +372,10 @@ nav>img {
         width: 70%;
     }
 
+    .hero-text h1 {
+        font-size: 2.25rem;
+    }
+
     .hero-text {
         padding: 2.5em 4.5rem 1.7em;
     }
